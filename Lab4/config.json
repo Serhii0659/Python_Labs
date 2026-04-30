@@ -1,0 +1,7 @@
+{
+    "text_file": "steve_jobs.txt",
+    "target_lang": "it",
+    "module_name": "mod_deep",
+    "output": "file",
+    "max_sentences": 4
+}
