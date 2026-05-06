@@ -2,11 +2,6 @@ import re
 
 
 def custom_sort_key(word):
-    """
-    Ключ сортування:
-    1. Українські літери (пріоритет 0)
-    2. Латинські літери (пріоритет 1)
-    """
     ua_alphabet = "абвгґдеєжзиіїйклмнопрстуфхцчшщьюя"
     en_alphabet = "abcdefghijklmnopqrstuvwxyz"
 
@@ -24,7 +19,6 @@ def custom_sort_key(word):
 
 
 def main():
-    # 2.1 Читання створеного файлу
     try:
         with open("text.txt", "r", encoding="utf-8") as f:
             content = f.read()
@@ -35,10 +29,8 @@ def main():
     print("--- Початковий текст ---")
     print(content)
 
-    # Витягуємо слова
     words = re.findall(r"[a-zA-Zа-яА-ЯіїєґІЇЄҐ]+", content)
 
-    # 2.2 Сортування: Українська -> Латиниця
     sorted_words = sorted(list(set(words)), key=custom_sort_key)
 
     print("\n--- Відсортований список слів ---")

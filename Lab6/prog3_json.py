@@ -2,7 +2,6 @@ import json
 
 
 def main():
-    # 4.1 Словник (10+ записів)
     data = {
         "Коваленко": ["Сергій", "Миколайович", 2006],
         "Шевченко": ["Андрій", "Миколайович", 1976],
@@ -16,12 +15,10 @@ def main():
         "Кравченко": ["Анна", "Олегівна", 2001],
     }
 
-    # 4.2 Запис у файл (UTF-8, без екранування ASCII)
     with open("data.json", "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
     print("[SUCCESS] Словник записано у data.json")
 
-    # 4.3 Читання та вивід у консоль
     with open("data.json", "r", encoding="utf-8") as f:
         loaded_data = json.load(f)
 
